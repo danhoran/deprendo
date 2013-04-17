@@ -58,6 +58,7 @@
     // Returns estimated device type based on predetermined threshold
     deprendo.device = function() {
         var width = getWidth(),
+            element = document.getElementById('deprendo'),
             ua = window.navigator.userAgent,
             support = ua.indexOf('Android') && ua.indexOf('Opera') || a.indexOf('Android') && ua.indexOf('Firefox') ? false : true;
 
@@ -65,7 +66,7 @@
             var ratio = getRatio();
             width = Math.floor(width * ratio);
         }
-        
+
         if (width <= 480) {
             return 'mobile';
         } else if (width >= 1024) {
